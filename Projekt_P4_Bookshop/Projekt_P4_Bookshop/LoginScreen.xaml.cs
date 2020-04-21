@@ -21,6 +21,7 @@ namespace Projekt_P4_Bookshop
     /// </summary>
     public partial class LoginScreen : Window
     {
+        public static string username;
         public LoginScreen()
         {
             InitializeComponent();
@@ -33,7 +34,28 @@ namespace Projekt_P4_Bookshop
             {
                 if (sqlConn.State == ConnectionState.Closed)
                     sqlConn.Open();
-                string query = "SELECT ";
+                string query = "SELECT COUNT(1) FROM [dbo].[Customers] WHERE Customer_ID=@Customer_ID AND Customer_password=@Customer_password";
+                SqlCommand sqlCmd = new SqlCommand(query, sqlConn);
+                sqlCmd.CommandType = CommandType.Text;
+                sqlCmd.Parameters.AddWithValue("@First_name", txt_username.Text);
+                sqlCmd.Parameters.AddWithValue("@Customer_ID", txt_customer_id.Text);
+                sqlCmd.Parameters.AddWithValue("@Customer_password", txt_password.Password);
+
+                username = txt_username.Text;
+                int count = Convert.ToInt32(sqlCmd.ExecuteScalar());
+                if (count==1)
+                {
+                    
+                    MainWindow mainWindow = new MainWindow();
+                    mainWindow.Show();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Login/Hasło nie prawidłowe");
+                }
+
+
             }
             catch (Exception ex)
             {
@@ -44,11 +66,6 @@ namespace Projekt_P4_Bookshop
             {
                 sqlConn.Close();
             }
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

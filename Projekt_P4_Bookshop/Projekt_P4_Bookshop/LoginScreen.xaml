@@ -7,12 +7,13 @@
         mc:Ignorable="d"
         Title="LoginScreen" Height="300" Width="300">
     <Grid>
-        <Label Content="        Login:" HorizontalAlignment="Left" Height="43" Margin="0,67,0,0" VerticalAlignment="Top" Width="158" FontSize="20"/>
-        <Label Content="" HorizontalAlignment="Left" Height="29" Margin="10,93,0,0" VerticalAlignment="Top" Width="118"/>
-        <Label Content="        Hasło:" HorizontalAlignment="Left" Height="43" Margin="0,127,0,0" VerticalAlignment="Top" Width="158" FontSize="20"/>
-        <TextBox HorizontalAlignment="Left" Height="43" Margin="158,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="126" AutomationProperties.Name="txt_login" IsInactiveSelectionHighlightEnabled="True"/>
-        <PasswordBox HorizontalAlignment="Left" Height="43" Margin="158,127,0,0" VerticalAlignment="Top" Width="126" Name="txt_password"/>
-        <Button Content="Zaloguj" HorizontalAlignment="Left" Height="46" Margin="76,203,0,0" VerticalAlignment="Top" Width="160" Click="Button_Click"/>
+        <Label Content="        Login:" HorizontalAlignment="Left" Height="43" Margin="0,55,0,0" VerticalAlignment="Top" Width="158" FontSize="20"/>
+        <Label Content="        Hasło:" HorizontalAlignment="Left" Height="43" Margin="0,144,0,0" VerticalAlignment="Top" Width="158" FontSize="20"/>
+        <TextBox x:Name="txt_username" HorizontalAlignment="Left" Height="43" Margin="158,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="126" AutomationProperties.Name="txt_login" IsInactiveSelectionHighlightEnabled="True"/>
+        <PasswordBox HorizontalAlignment="Left" Height="43" Margin="158,144,0,0" VerticalAlignment="Top" Width="126" Name="txt_password"/>
+        <Button x:Name="button_login" Content="Zaloguj" HorizontalAlignment="Left" Height="46" Margin="76,203,0,0" VerticalAlignment="Top" Width="160" Click="Button_Click"/>
+        <TextBox x:Name="txt_customer_id" HorizontalAlignment="Left" Height="25" Margin="158,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="49"/>
+        <Label Content="ID:&#xD;&#xA;" HorizontalAlignment="Left" Height="33" Margin="49,106,0,0" VerticalAlignment="Top" Width="75" FontSize="16"/>
 
     </Grid>
 </Window>

@@ -24,5 +24,10 @@ namespace Projekt_P4_Bookshop
         {
             InitializeComponent();
         }
+
+        private void username_name_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            username_name.Text = LoginScreen.username;
+        }
     }
 }
