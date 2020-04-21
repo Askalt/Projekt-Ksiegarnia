@@ -1,0 +1,18 @@
+﻿<Window x:Class="Projekt_P4_Bookshop.LoginScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Projekt_P4_Bookshop"
+        mc:Ignorable="d"
+        Title="LoginScreen" Height="300" Width="300">
+    <Grid>
+        <Label Content="        Login:" HorizontalAlignment="Left" Height="43" Margin="0,67,0,0" VerticalAlignment="Top" Width="158" FontSize="20"/>
+        <Label Content="" HorizontalAlignment="Left" Height="29" Margin="10,93,0,0" VerticalAlignment="Top" Width="118"/>
+        <Label Content="        Hasło:" HorizontalAlignment="Left" Height="43" Margin="0,127,0,0" VerticalAlignment="Top" Width="158" FontSize="20"/>
+        <TextBox HorizontalAlignment="Left" Height="43" Margin="158,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="126" AutomationProperties.Name="txt_login" IsInactiveSelectionHighlightEnabled="True"/>
+        <PasswordBox HorizontalAlignment="Left" Height="43" Margin="158,127,0,0" VerticalAlignment="Top" Width="126" Name="txt_password"/>
+        <Button Content="Zaloguj" HorizontalAlignment="Left" Height="46" Margin="76,203,0,0" VerticalAlignment="Top" Width="160" Click="Button_Click"/>
+
+    </Grid>
+</Window>
