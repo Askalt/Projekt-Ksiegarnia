@@ -27,7 +27,9 @@ namespace Projekt_P4_Bookshop
 
         private void username_name_TextChanged(object sender, TextChangedEventArgs e)
         {
-            username_name.Text = LoginScreen.username;
+            username_name.Text = LoginScreen.username.ToUpper();
+    
+           
         }
     }
 }

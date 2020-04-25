@@ -8,5 +8,7 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <TextBox x:Name="username_name" HorizontalAlignment="Left" Height="30" Margin="695,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="89" IsReadOnly="True" TextChanged="username_name_TextChanged"/>
+        <Label x:Name="username_lable" HorizontalAlignment="Left" Margin="695,56,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Window>

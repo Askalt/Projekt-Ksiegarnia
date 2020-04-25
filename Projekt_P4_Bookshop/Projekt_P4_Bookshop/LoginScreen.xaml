@@ -5,15 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Projekt_P4_Bookshop"
         mc:Ignorable="d"
-        Title="LoginScreen" Height="300" Width="300">
+        Title="LoginScreen" Height="396" Width="328" ResizeMode="NoResize">
     <Grid>
         <Label Content="        Login:" HorizontalAlignment="Left" Height="43" Margin="0,55,0,0" VerticalAlignment="Top" Width="158" FontSize="20"/>
+        <Label Content="ID:" HorizontalAlignment="Left" Height="33" Margin="49,106,0,0" VerticalAlignment="Top" Width="75" FontSize="16"/>
         <Label Content="        Hasło:" HorizontalAlignment="Left" Height="43" Margin="0,144,0,0" VerticalAlignment="Top" Width="158" FontSize="20"/>
-        <TextBox x:Name="txt_username" HorizontalAlignment="Left" Height="43" Margin="158,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="126" AutomationProperties.Name="txt_login" IsInactiveSelectionHighlightEnabled="True"/>
-        <PasswordBox HorizontalAlignment="Left" Height="43" Margin="158,144,0,0" VerticalAlignment="Top" Width="126" Name="txt_password"/>
-        <Button x:Name="button_login" Content="Zaloguj" HorizontalAlignment="Left" Height="46" Margin="76,203,0,0" VerticalAlignment="Top" Width="160" Click="Button_Click"/>
-        <TextBox x:Name="txt_customer_id" HorizontalAlignment="Left" Height="25" Margin="158,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="49"/>
-        <Label Content="ID:&#xD;&#xA;" HorizontalAlignment="Left" Height="33" Margin="49,106,0,0" VerticalAlignment="Top" Width="75" FontSize="16"/>
+        <TextBox x:Name="txt_username" HorizontalAlignment="Left" Height="24" Margin="110,64,0,0" VerticalAlignment="Top" Width="126" AutomationProperties.Name="txt_login" IsInactiveSelectionHighlightEnabled="True" FontSize="18" />
+        <TextBox x:Name="txt_customer_id" HorizontalAlignment="Left" Height="25" Margin="110,114,0,0"  VerticalAlignment="Top" Width="49" />
+        <TextBox x:Name="txt_password" HorizontalAlignment="Left" Height="24" Margin="110,154,0,0" VerticalAlignment="Top" Width="126"/>
+        <Button x:Name="button_login" HorizontalAlignment="Left" Height="46" Margin="76,203,0,0" VerticalAlignment="Top" Width="160" Click="Button_Click" Content="Zaloguj"/>
+
+
+        <Button x:Name="button_regi" Content="Rejestracja" HorizontalAlignment="Left" Height="47" Margin="76,273,0,0" VerticalAlignment="Top" Width="160" Click="button_regi_Click"/>
 
     </Grid>
 </Window>
