@@ -7,8 +7,13 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TextBox x:Name="username_name" HorizontalAlignment="Left" Height="30" Margin="695,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="89" IsReadOnly="True" TextChanged="username_name_TextChanged"/>
-        <Label x:Name="username_lable" HorizontalAlignment="Left" Margin="695,56,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="username_name" HorizontalAlignment="Left" Height="20" Margin="697,14,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="89" IsReadOnly="True" TextChanged="username_name_TextChanged"/>
+        <Label x:Name="username_label" Content="Witaj:" HorizontalAlignment="Left" Margin="652,10,0,0" VerticalAlignment="Top" />
+        <DataGrid x:Name="data_grid_table" AutoGenerateColumns="True" HorizontalAlignment="Left" Height="334" Margin="20,77,0,0" VerticalAlignment="Top" Width="557" SelectionChanged="DataGrid_SelectionChanged"/>
+        <Button x:Name="button_load_book" HorizontalAlignment="Left" Margin="20,14,0,0" VerticalAlignment="Top" Width="113" Height="50" Content="Load Books" Click="button_load_book_Click"/>
+        <TextBox x:Name="txt_name_authora_find" HorizontalAlignment="Left" Height="23" Margin="577,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
+        <Button x:Name="button_sort_desc" Content="DESC" HorizontalAlignment="Left" Margin="133,14,0,0" VerticalAlignment="Top" Width="75" Height="25" Click="button_sort_desc_Click"/>
+        <Button x:Name="button_sord_asc" Content="ASC" HorizontalAlignment="Left" Margin="133,39,0,0" VerticalAlignment="Top" Width="75" Height="25" Click="button_sord_asc_Click"/>
 
     </Grid>
 </Window>

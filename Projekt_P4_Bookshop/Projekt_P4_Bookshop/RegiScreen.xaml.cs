@@ -57,7 +57,7 @@ namespace Projekt_P4_Bookshop
                 using (SqlConnection sqlCon = new SqlConnection(connectinString))
                 {
                    
-                    string query = "INSERT INTO [dbo].[Customers](Customer_ID,First_name,Last_name,Customer_City,Customer_Street,Customer_PCode,Customer_email,Customer_phone,Customer_password) VALUES(@Customer_ID,@First_name,@Last_name,@Customer_City,@Customer_Street,@Customer_PCode,@Customer_email,@Customer_phone,@Customer_password)";
+                   // string query = "INSERT INTO [dbo].[Customers](Customer_ID,First_name,Last_name,Customer_City,Customer_Street,Customer_PCode,Customer_email,Customer_phone,Customer_password) VALUES(@Customer_ID,@First_name,@Last_name,@Customer_City,@Customer_Street,@Customer_PCode,@Customer_email,@Customer_phone,@Customer_password)";
                     sqlCon.Open();
                     SqlCommand sqlCmd = new SqlCommand("AddUsers",sqlCon);
                     sqlCmd.CommandType = CommandType.StoredProcedure;
