@@ -7,13 +7,27 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TextBox x:Name="username_name" HorizontalAlignment="Left" Height="20" Margin="697,14,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="89" IsReadOnly="True" TextChanged="username_name_TextChanged"/>
+        <TextBox x:Name="username_name" HorizontalAlignment="Left" Height="20" Margin="697,14,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="58" IsReadOnly="True" TextChanged="username_name_TextChanged"/>
         <Label x:Name="username_label" Content="Witaj:" HorizontalAlignment="Left" Margin="652,10,0,0" VerticalAlignment="Top" />
-        <DataGrid x:Name="data_grid_table" AutoGenerateColumns="True" HorizontalAlignment="Left" Height="334" Margin="20,77,0,0" VerticalAlignment="Top" Width="557" SelectionChanged="DataGrid_SelectionChanged"/>
-        <Button x:Name="button_load_book" HorizontalAlignment="Left" Margin="20,14,0,0" VerticalAlignment="Top" Width="113" Height="50" Content="Load Books" Click="button_load_book_Click"/>
-        <TextBox x:Name="txt_name_authora_find" HorizontalAlignment="Left" Height="23" Margin="577,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
-        <Button x:Name="button_sort_desc" Content="DESC" HorizontalAlignment="Left" Margin="133,14,0,0" VerticalAlignment="Top" Width="75" Height="25" Click="button_sort_desc_Click"/>
-        <Button x:Name="button_sord_asc" Content="ASC" HorizontalAlignment="Left" Margin="133,39,0,0" VerticalAlignment="Top" Width="75" Height="25" Click="button_sord_asc_Click"/>
+        <DataGrid x:Name="data_grid_table" AutoGenerateColumns="True" HorizontalAlignment="Left" Height="334" Margin="20,77,0,0" VerticalAlignment="Top" Width="557"/>
+        <Button x:Name="button_load_book" HorizontalAlignment="Left" Margin="20,14,0,0" VerticalAlignment="Top" Width="113" Height="50" Content="Załaduj książki" Click="button_load_book_Click"/>
+        <TextBox x:Name="txt_name_authora_find" HorizontalAlignment="Left" Height="23" Margin="669,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
+        <Button x:Name="button_sort_desc" Content="Sort.Malejąco" HorizontalAlignment="Left" Margin="256,14,0,0" VerticalAlignment="Top" Width="75" Height="25" Click="button_sort_desc_Click"/>
+        <Button x:Name="button_sord_asc" Content="Sort.Rosnąco" HorizontalAlignment="Left" Margin="256,39,0,0" VerticalAlignment="Top" Width="75" Height="25" Click="button_sord_asc_Click"/>
+        <Label x:Name="author_name_label" Content="Author name:" HorizontalAlignment="Left" Height="23" Margin="577,77,0,0" VerticalAlignment="Top" Width="87"/>
+        <Button x:Name="find_book_button" Content="Znajdź książke" HorizontalAlignment="Left" Height="50" Margin="138,14,0,0" VerticalAlignment="Top" Width="113" Click="find_book_button_Click"/>
+        <Button x:Name="book_store_customer_want" Content="Koszyk" HorizontalAlignment="Left" Height="50" Margin="346,14,0,0" VerticalAlignment="Top" Width="113" Click="book_store_customer_want_Click"/>
+        <Button x:Name="button_shop_add" Content="Dodaj do koszyka" HorizontalAlignment="Left" Height="31" Margin="612,306,0,0" VerticalAlignment="Top" Width="143" Click="Button_Click"/>
+        <Label x:Name="Autor" Content="Autor :" HorizontalAlignment="Left" Height="27" Margin="582,150,0,0" VerticalAlignment="Top" Width="82"/>
+        <Label Content="Tytuł :" HorizontalAlignment="Left" Height="27" Margin="582,182,0,0" VerticalAlignment="Top" Width="82"/>
+        <Label Content="Cena :" HorizontalAlignment="Left" Height="27" Margin="582,214,0,0" VerticalAlignment="Top" Width="44"/>
+        <Label Content="Ilość :" HorizontalAlignment="Left" Height="27" Margin="582,268,0,0" VerticalAlignment="Top" Width="82"/>
+        <TextBox x:Name="txt_author_shop" HorizontalAlignment="Left" Height="27" Margin="652,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" IsUndoEnabled="True" IsReadOnly="True"/>
+        <TextBox x:Name="txt_title_shop" HorizontalAlignment="Left" Height="27" Margin="652,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" IsReadOnly="True"/>
+        <TextBox x:Name="txt_price_shop" HorizontalAlignment="Left" Height="27" Margin="652,214,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="47" IsReadOnly="True"/>
+        <TextBox x:Name="txt_numer_book" HorizontalAlignment="Left" Height="27" Margin="652,268,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="47"/>
+        <TextBox x:Name="txt_publisher_year" HorizontalAlignment="Left" Height="27" Margin="652,241,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="47" IsInactiveSelectionHighlightEnabled="True"/>
+        <Label x:Name="publisher_label" Content="Rok :" HorizontalAlignment="Left" Height="27" Margin="582,241,0,0" VerticalAlignment="Top" Width="56"/>
 
     </Grid>
 </Window>

@@ -22,7 +22,11 @@ namespace Projekt_P4_Bookshop
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static string username_id_mw;
         public static string author_name_f;
+
+        
+        
         public MainWindow()
         {
             InitializeComponent();
@@ -35,23 +39,20 @@ namespace Projekt_P4_Bookshop
 
         }
 
-        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
 
-        }
 
         private void button_load_book_Click(object sender, RoutedEventArgs e)
         {
-       
+ 
             SqlConnection sqlConn = new SqlConnection(@"Data Source=DESKTOP-MPTGS57\SQLEXPRESS;Initial Catalog=BookStore;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
             try
             {
                 sqlConn.Open();
                 author_name_f = txt_name_authora_find.Text;
-                string query = "select Author_name as Author,Title_name as Title,Published_year as Published,Retail_price as Price from [dbo].[STOCK] where Author_name=@Author_name";        
+                string query = "select Author_name as Author,Title_name as Title,Published_year as Published,Retail_price as Price from [dbo].[STOCK]";        
                 SqlCommand sqlCommand = new SqlCommand(query, sqlConn);
                 sqlCommand.CommandType = CommandType.Text;
-                sqlCommand.Parameters.AddWithValue("@Author_name", txt_name_authora_find.Text);
+              
 
                 sqlCommand.ExecuteNonQuery();
 
@@ -73,6 +74,7 @@ namespace Projekt_P4_Bookshop
 
         private void button_sort_desc_Click(object sender, RoutedEventArgs e)
         {
+     
             SqlConnection sqlConn = new SqlConnection(@"Data Source=DESKTOP-MPTGS57\SQLEXPRESS;Initial Catalog=BookStore;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
             try
             {
@@ -99,6 +101,7 @@ namespace Projekt_P4_Bookshop
 
         private void button_sord_asc_Click(object sender, RoutedEventArgs e)
         {
+
             SqlConnection sqlConn = new SqlConnection(@"Data Source=DESKTOP-MPTGS57\SQLEXPRESS;Initial Catalog=BookStore;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
             try
             {
@@ -121,6 +124,65 @@ namespace Projekt_P4_Bookshop
                 MessageBox.Show(ex.Message);
                 throw;
             }
+        }
+
+        private void find_book_button_Click(object sender, RoutedEventArgs e)
+        {
+            if (txt_name_authora_find.Text == "")
+            {
+                MessageBox.Show("Author name is empty");
+            }
+            else
+            {
+                SqlConnection sqlConn = new SqlConnection(@"Data Source=DESKTOP-MPTGS57\SQLEXPRESS;Initial Catalog=BookStore;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+                try
+                {
+                    sqlConn.Open();
+                    author_name_f = txt_name_authora_find.Text;
+                    string query = "select Author_name as Author,Title_name as Title,Published_year as Published,Retail_price as Price from [dbo].[STOCK] where Author_name=@Author_name";
+                    SqlCommand sqlCommand = new SqlCommand(query, sqlConn);
+                    sqlCommand.CommandType = CommandType.Text;
+                    sqlCommand.Parameters.AddWithValue("@Author_name", txt_name_authora_find.Text);
+
+
+                    sqlCommand.ExecuteNonQuery();
+
+                    SqlDataAdapter dataAdapt = new SqlDataAdapter(sqlCommand);
+                    DataTable dt = new DataTable("[dbo].[STOCK]");
+                    dataAdapt.Fill(dt);
+                    data_grid_table.ItemsSource = dt.DefaultView;
+
+                    sqlConn.Close();
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message);
+                    
+                }
+
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var data = data_grid_table.SelectedItem;
+            string author_n = (data_grid_table.SelectedCells[0].Column.GetCellContent(data) as TextBlock).Text;
+            txt_author_shop.Text = author_n;
+            string title_n = (data_grid_table.SelectedCells[1].Column.GetCellContent(data) as TextBlock).Text;
+            txt_title_shop.Text = title_n;
+            string publisher_n = (data_grid_table.SelectedCells[2].Column.GetCellContent(data) as TextBlock).Text;
+            txt_publisher_year.Text = publisher_n;
+            string price_n = (data_grid_table.SelectedCells[3].Column.GetCellContent(data) as TextBlock).Text;
+            txt_price_shop.Text = price_n;
+
+        }
+
+        private void book_store_customer_want_Click(object sender, RoutedEventArgs e)
+        {
+            Cart cart = new Cart();
+            cart.Show();
+            this.Close();
         }
     }
 }

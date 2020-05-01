@@ -22,9 +22,11 @@ namespace Projekt_P4_Bookshop
     public partial class LoginScreen : Window
     {
         public static string username;
+        public static string username_id_lw;
         public LoginScreen()
         {
             InitializeComponent();
+           
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -40,9 +42,11 @@ namespace Projekt_P4_Bookshop
                     sqlCmd.CommandType = CommandType.Text;
                     sqlCmd.Parameters.AddWithValue("@First_name", txt_username.Text);
                     sqlCmd.Parameters.AddWithValue("@Customer_ID", txt_customer_id.Text);
-                    sqlCmd.Parameters.AddWithValue("@Customer_password", txt_password.Text);
+                    sqlCmd.Parameters.AddWithValue("@Customer_password", txt_password.Password);
 
                     username = txt_username.Text;
+                    username_id_lw = txt_customer_id.Text;
+                    
                     int count = Convert.ToInt32(sqlCmd.ExecuteScalar());
                     if (count == 1)
                     {
@@ -56,7 +60,7 @@ namespace Projekt_P4_Bookshop
                         MessageBox.Show("Login/Hasło/ID nie prawidłowe");
                          txt_username.Text = "";
                          txt_customer_id.Text = "";
-                         txt_password.Text = "";
+                         txt_password.Password = "";
                          
                     }
 
