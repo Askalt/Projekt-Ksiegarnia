@@ -21,16 +21,14 @@
         <Label x:Name="Autor" Content="Autor :" HorizontalAlignment="Left" Height="27" Margin="582,150,0,0" VerticalAlignment="Top" Width="82"/>
         <Label Content="Tytuł :" HorizontalAlignment="Left" Height="27" Margin="582,182,0,0" VerticalAlignment="Top" Width="82"/>
         <Label Content="Cena :" HorizontalAlignment="Left" Height="27" Margin="582,214,0,0" VerticalAlignment="Top" Width="44"/>
-        <Label Content="Ilość :" HorizontalAlignment="Left" Height="27" Margin="582,268,0,0" VerticalAlignment="Top" Width="82"/>
+        <Label Content="Ilość :" HorizontalAlignment="Left" Height="27" Margin="582,246,0,0" VerticalAlignment="Top" Width="82"/>
         <TextBox x:Name="txt_author_shop" HorizontalAlignment="Left" Height="27" Margin="652,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" IsUndoEnabled="True" IsReadOnly="True"/>
         <TextBox x:Name="txt_title_shop" HorizontalAlignment="Left" Height="27" Margin="652,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" IsReadOnly="True"/>
         <TextBox x:Name="txt_price_shop" HorizontalAlignment="Left" Height="27" Margin="664,214,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="47" IsReadOnly="True"/>
-        <TextBox x:Name="txt_numer_book" HorizontalAlignment="Left" Height="27" Margin="664,268,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="47"/>
-        <TextBox x:Name="txt_order_number" HorizontalAlignment="Left" Height="27" Margin="664,241,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="47" IsInactiveSelectionHighlightEnabled="True"/>
-        <Label x:Name="publisher_label" Content="Zamówienie :" HorizontalAlignment="Left" Height="27" Margin="582,241,0,0" VerticalAlignment="Top" Width="82" ClipToBounds="True"/>
-        <Button x:Name="button_order_nubmer_add" Content="-------&gt;" HorizontalAlignment="Left" Height="31" Margin="687,300,0,0" VerticalAlignment="Top" Width="97" Click="Button_Click_1"/>
-        <Button x:Name="button_back_order_number" Content="&lt;-------" HorizontalAlignment="Left" Height="31" Margin="590,300,0,0" VerticalAlignment="Top" Width="97" Click="button_back_order_number_Click"/>
+        <TextBox x:Name="txt_numer_book" HorizontalAlignment="Left" Height="27" Margin="664,246,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="47"/>
         <TextBox x:Name="txt_username_id_mw" HorizontalAlignment="Left" Height="25" Margin="697,39,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="36" TextChanged="txt_username_id_mw_TextChanged"/>
+        <TextBox x:Name="txt_order_generic" HorizontalAlignment="Left" Height="27" Margin="664,278,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="47"/>
+        <Label x:Name="ordder_gen" Content="Zamówienie" HorizontalAlignment="Left" Height="27" Margin="582,278,0,0" VerticalAlignment="Top" Width="77"/>
 
     </Grid>
 </Window>

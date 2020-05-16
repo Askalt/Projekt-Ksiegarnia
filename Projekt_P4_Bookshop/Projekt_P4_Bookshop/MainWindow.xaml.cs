@@ -24,7 +24,9 @@ namespace Projekt_P4_Bookshop
     {
         public static string username_id_mw;
         public static string author_name_f;
-        private int order_n = 1;
+       
+        public static string order_id_gen;
+        public static int index_ID;
 
 
 
@@ -179,24 +181,44 @@ namespace Projekt_P4_Bookshop
             txt_title_shop.Text = title_n;
             string price_n = (data_grid_table.SelectedCells[3].Column.GetCellContent(data) as TextBlock).Text;
             txt_price_shop.Text = price_n;
-
+            
             string connectionString=@"Data Source=DESKTOP-MPTGS57\SQLEXPRESS;Initial Catalog=BookStore;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+
+            using (SqlConnection sqlConn2 = new SqlConnection(connectionString))
+            {
+                var query = "SELECT MAX ([Order_ID]) FROM [dbo].[Cart]";
+                SqlCommand sqlCmd = new SqlCommand(query, sqlConn2);
+                sqlConn2.Open();
+                order_id_gen = sqlCmd.ExecuteScalar().ToString();
+                index_ID = Int32.Parse(order_id_gen);
+                index_ID++;
+                txt_order_generic.Text = MainWindow.index_ID.ToString();
+
+                sqlConn2.Close();
+            }
             using (SqlConnection sqlConn = new SqlConnection(connectionString))
             {
-                username_id_mw= LoginScreen.username_id_lw;
+                username_id_mw = LoginScreen.username_id_lw;
                 sqlConn.Open();
+
+                if (txt_numer_book.Text == "")
+                {
+                    MessageBox.Show("Something is empty");
+                }
+                else
+                {
                 SqlCommand sqlCmd = new SqlCommand("CartBookAdd", sqlConn);
                 sqlCmd.CommandType = CommandType.StoredProcedure;
-                sqlCmd.Parameters.AddWithValue("@Order_ID", txt_order_number.Text.Trim());
-                sqlCmd.Parameters.AddWithValue("@Customer_ID",txt_username_id_mw.Text.Trim());
+                sqlCmd.Parameters.AddWithValue("@Order_ID", txt_order_generic.Text.Trim());
+                sqlCmd.Parameters.AddWithValue("@Customer_ID", txt_username_id_mw.Text.Trim());
                 sqlCmd.Parameters.AddWithValue("@Book_name", txt_title_shop.Text.Trim());
                 sqlCmd.Parameters.AddWithValue("@Price", txt_price_shop.Text.Trim());
                 sqlCmd.Parameters.AddWithValue("@Amount", txt_numer_book.Text.Trim());
                 sqlCmd.ExecuteNonQuery();
                 MessageBox.Show("Dodano do koszyka!");
-
+                 }
             }
-            
+
 
 
 
@@ -211,23 +233,9 @@ namespace Projekt_P4_Bookshop
 
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            order_n++;
-            txt_order_number.Text = order_n.ToString();
-            
-           
-        }
 
-        private void button_back_order_number_Click(object sender, RoutedEventArgs e)
-        {
-            if (order_n>1)
-            {
-                order_n--;
-                txt_order_number.Text = order_n.ToString();
-            }
-            
-        }
+
+
 
  
     }
